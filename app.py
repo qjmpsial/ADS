@@ -17,7 +17,8 @@ from PIL import Image,ImageOps,ImageFilter
 import numpy as np
 
 def import_and_predict(image_data,model):
-    size=(64,64)
+    # size=(64,64)
+    size=(32,32)
     # image=ImageOps.fit(image_data,size,Image.ANTIALIAS)
     image = ImageOps.fit(image_data, size, Image.LANCZOS)  # Use Image.LANCZOS for antialiasing
     img=np.asarray(image)
@@ -26,7 +27,8 @@ def import_and_predict(image_data,model):
     return prediction
 
 # def import_and_predict(image_data, model):
-#     size = (64, 64)
+    # size=(64,64)
+#     size = (32, 32)
 #     # image = image_data.resize(size, Image.ANTIALIAS)  # <-- Modified line
 #     image = ImageOps.fit(image_data, size, ImageFilter.ANTIALIAS) # <-- Modified line
 #     img = np.asarray(image)
