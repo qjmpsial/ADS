@@ -26,15 +26,6 @@ def import_and_predict(image_data,model):
     prediction=model.predict(img_reshape)
     return prediction
 
-# def import_and_predict(image_data, model):
-    # size=(64,64)
-#     size = (32, 32)
-#     # image = image_data.resize(size, Image.ANTIALIAS)  # <-- Modified line
-#     image = ImageOps.fit(image_data, size, ImageFilter.ANTIALIAS) # <-- Modified line
-#     img = np.asarray(image)
-#     img_reshape = img[np.newaxis, ...]
-#     prediction = model.predict(img_reshape)
-#     return prediction
 
 if file is None:
     st.text("Please upload an image file")
@@ -48,5 +39,23 @@ else:
        '51', '52', '53', '54', '55', '56', '57', '58', '59', '60', '61', '62', '63', '64', '65', '66', '67',
        '68', '69', '70', '71', '72', '73', '74', '75', '76', '77', '78', '79', '80', '81', '82', '83', '84',
        '85', '86', '87', '88', '89', '90', '91', '92', '93', '94', '95', '96', '97', '98', '99']
-    string="OUTPUT : "+class_names[np.argmax(prediction)]
+    str_labels = ['apple', 'aquarium_fish', 'baby', 'bear', 'beaver', 'bed', 'bee', 'beetle', 'bicycle', 'bottle', 
+                  'bowl', 'boy', 'bridge', 'bus', 'butterfly', 'camel', 'can', 'castle', 'caterpillar', 'cattle', 'chair', 
+                  'chimpanzee', 'clock', 'cloud', 'cockroach', 'couch', 'crab', 'crocodile', 'cup', 'dinosaur', 'dolphin', 'elephant', 
+                  'flatfish', 'forest', 'fox', 'girl', 'hamster', 'house', 'kangaroo', 'keyboard', 'lamp', 'lawn_mower', 'leopard', 'lion', 
+                  'lizard', 'lobster', 'man', 'maple_tree', 'motorcycle', 'mountain', 'mouse', 'mushroom', 'oak_tree', 'orange', 'orchid', 'otter', 
+                  'palm_tree', 'pear', 'pickup_truck', 'pine_tree', 'plain', 'plate', 'poppy', 'porcupine', 'possum', 'rabbit', 'raccoon', 'ray', 'road', 
+                  'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider', 'squirrel', 'streetcar', 'sunflower', 
+                  'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger', 'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
+
+  def get_str_label(class_name, class_names, str_labels):
+    try:
+        index = class_names.index(class_name)
+        return str_labels[index]
+    except ValueError:
+        return None  # Return None if the class name is not found in class_names
+      
+  result = get_str_label(class_names[np.argmax(prediction), class_names, str_labels)
+  
+    string="OUTPUT : "+class_names[np.argmax(prediction) + result]
     st.success(string)
