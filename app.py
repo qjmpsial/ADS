@@ -23,6 +23,7 @@ import numpy as np
     img_reshape=img[np.newaxis,...]
     prediction=model.predict(img_reshape)
     return prediction
+
 # def import_and_predict(image_data, model):
 #     size = (64, 64)
 #     # image = image_data.resize(size, Image.ANTIALIAS)  # <-- Modified line
