@@ -17,20 +17,20 @@ from PIL import Image,ImageOps,ImageFilter
 import numpy as np
 
 # def import_and_predict(image_data,model):
-#     size=(64,64)
-#     image=ImageOps.fit(image_data,size,Image.ANTIALIAS)
-#     img=np.asarray(image)
-#     img_reshape=img[np.newaxis,...]
-#     prediction=model.predict(img_reshape)
-#     return prediction
-def import_and_predict(image_data, model):
-    size = (64, 64)
-    # image = image_data.resize(size, Image.ANTIALIAS)  # <-- Modified line
-    image = ImageOps.fit(image_data, size, ImageFilter.ANTIALIAS) # <-- Modified line
-    img = np.asarray(image)
-    img_reshape = img[np.newaxis, ...]
-    prediction = model.predict(img_reshape)
+    size=(64,64)
+    image=ImageOps.fit(image_data,size,Image.ANTIALIAS)
+    img=np.asarray(image)
+    img_reshape=img[np.newaxis,...]
+    prediction=model.predict(img_reshape)
     return prediction
+# def import_and_predict(image_data, model):
+#     size = (64, 64)
+#     # image = image_data.resize(size, Image.ANTIALIAS)  # <-- Modified line
+#     image = ImageOps.fit(image_data, size, ImageFilter.ANTIALIAS) # <-- Modified line
+#     img = np.asarray(image)
+#     img_reshape = img[np.newaxis, ...]
+#     prediction = model.predict(img_reshape)
+#     return prediction
 
 if file is None:
     st.text("Please upload an image file")
