@@ -57,5 +57,5 @@ def get_str_label(class_name, class_names, str_labels):
       
 result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
   
-    string="OUTPUT : "+class_names[np.argmax(prediction) + result]
-    st.success(string)
+string="OUTPUT : "+class_names[np.argmax(prediction) + result]
+st.success(string)
