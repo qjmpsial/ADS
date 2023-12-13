@@ -55,7 +55,7 @@ def get_str_label(class_name, class_names, str_labels):
   except ValueError:
       return None  # Return None if the class name is not found in class_names
       
-result = get_str_label(class_names[np.argmax(prediction), class_names, str_labels)
+result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
   
     string="OUTPUT : "+class_names[np.argmax(prediction) + result]
     st.success(string)
