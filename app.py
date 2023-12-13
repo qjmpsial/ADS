@@ -55,6 +55,7 @@ else:
                   'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider', 'squirrel', 'streetcar', 'sunflower', 
                   'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger', 'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
     # string="OUTPUT : "+class_names[np.argmax(prediction)]
+    result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
     string="OUTPUT : "+class_names[np.argmax(prediction) + result]
     st.success(string)
 
