@@ -57,7 +57,7 @@ else:
     # string="OUTPUT : "+class_names[np.argmax(prediction)]
     result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
     # string="OUTPUT : "+class_names[np.argmax(prediction) + result]
-    string = "OUTPUT : " + " "  + str('Class number:') + class_names[np.argmax(prediction)] + " "  + str('Class description:') + str(result)
+    string = "OUTPUT : " + str(result)
     st.success(string)
 
 # def get_str_label(class_name, class_names, str_labels):
