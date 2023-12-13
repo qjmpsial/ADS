@@ -48,14 +48,14 @@ else:
                   'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider', 'squirrel', 'streetcar', 'sunflower', 
                   'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger', 'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
 
-  def get_str_label(class_name, class_names, str_labels):
-    try:
-        index = class_names.index(class_name)
-        return str_labels[index]
-    except ValueError:
-        return None  # Return None if the class name is not found in class_names
+def get_str_label(class_name, class_names, str_labels):
+  try:
+      index = class_names.index(class_name)
+      return str_labels[index]
+  except ValueError:
+      return None  # Return None if the class name is not found in class_names
       
-  result = get_str_label(class_names[np.argmax(prediction), class_names, str_labels)
+result = get_str_label(class_names[np.argmax(prediction), class_names, str_labels)
   
     string="OUTPUT : "+class_names[np.argmax(prediction) + result]
     st.success(string)
