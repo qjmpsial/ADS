@@ -7,7 +7,7 @@ def load_model():
   return model
 model=load_model()
 st.write("""
-# Image Classifier"""
+# CIFAR100 Image Classifier"""
 )
 file=st.file_uploader("Choose plant photo from computer",type=["jpg","png"])
 
@@ -54,19 +54,9 @@ else:
                   'palm_tree', 'pear', 'pickup_truck', 'pine_tree', 'plain', 'plate', 'poppy', 'porcupine', 'possum', 'rabbit', 'raccoon', 'ray', 'road', 
                   'rocket', 'rose', 'sea', 'seal', 'shark', 'shrew', 'skunk', 'skyscraper', 'snail', 'snake', 'spider', 'squirrel', 'streetcar', 'sunflower', 
                   'sweet_pepper', 'table', 'tank', 'telephone', 'television', 'tiger', 'tractor', 'train', 'trout', 'tulip', 'turtle', 'wardrobe', 'whale', 'willow_tree', 'wolf', 'woman', 'worm']
+  
     # string="OUTPUT : "+class_names[np.argmax(prediction)]
     result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
-    # string="OUTPUT : "+class_names[np.argmax(prediction) + result]
     string = "OUTPUT : " + str(result)
     st.success(string)
-
-# def get_str_label(class_name, class_names, str_labels):
-#   try:
-#       index = class_names.index(class_name)
-#       return str_labels[index]
-#   except ValueError:
-#       return None  # Return None if the class name is not found in class_names
-      
-# result = get_str_label(class_names[np.argmax(prediction)], class_names, str_labels)
-  
 
